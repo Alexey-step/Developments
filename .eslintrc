@@ -1,0 +1,27 @@
+
+{
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018
+  },
+  "extends": [
+    "airbnb-base",
+    "plugin:react/recommended",
+    "prettier",
+    "plugin:prettier/recommended",
+    "plugin:import/errors"
+  ],
+  "plugins": ["react", "prettier", "promise", "import"],
+  "rules": {
+    "no-param-reassign": ["error", { "props": false }],
+    "react/jsx-props-no-spreading": "off",
+    "no-use-before-define": "off",
+    "import/no-unresolved": "off",
+    "import/extensions": "off",
+    "no-shadow": "off",
+    "import/no-extraneous-dependencies": "off"
+  }
+}
