@@ -1,14 +1,44 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TerserWebpackPlugin = require("terser-webpack-plugin");
+
+const isDev = process.env.NODE_ENV === 'development'
+const isProd = !isDev
+
+const optimization = () => {
+  const config = {
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          name: "vendor",
+          test: /node_modules/,
+          chunks: "all",
+          enforce: true,
+        },
+      },
+    },
+  }
+
+  if (isProd) {
+    config.minimize = true,
+    config.minimizer = [
+      new TerserWebpackPlugin()
+    ]
+  }
+
+  return config
+}
 
 module.exports = {
-  entry: './src/index.js',
+  mode: 'development',
+  entry: './src/index.tsx',
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'build'),
     publicPath: '/'
   },
+  optimization: optimization(),
   devServer: {
     contentBase: path.resolve(__dirname, 'public'),
     open: false,
@@ -23,6 +53,10 @@ module.exports = {
         use: {
           loader: 'babel-loader',
         }
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        loader: 'ts-loader',
       },
       {
         test: /\.(s[ac]ss|css)$/i,
@@ -49,7 +83,7 @@ module.exports = {
     })
   ],
   resolve: {
-    extensions: ['.jsx', '.js', '.json']
+    extensions: ['.ts', '.tsx', '.js', '.json']
   },
   devtool: 'source-map'
 }

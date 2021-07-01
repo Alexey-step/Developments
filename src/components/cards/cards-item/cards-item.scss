@@ -1,0 +1,93 @@
+@import "../../UI/theme/mixins.scss";
+@import "../../UI/theme/variables.scss";
+
+.card {
+  background-color: $basic-grey;
+  border: 1px solid $special-grey;
+}
+
+.card__img-wrapper {
+  width: 100%;
+  position: relative;
+  height: 180px;
+
+  @media (min-width: $tablet-width) {
+    height: 223px;
+  }
+}
+
+.card__img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.card__type {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  right: 0;
+  color: $basic-white;
+  margin: 0;
+  padding: 8px 5px;
+  background-color: $special-blue;
+  font-weight: 700;
+  @include font(10px, 14px);
+
+  @media (min-width: $tablet-width) {
+    @include font(12px, 16px);
+    padding: 8px 10px;
+  }
+
+  &--support {
+    background-color: $special-orange;
+  }
+}
+
+.card__wrapper {
+  padding: 17px 20px;
+}
+
+.card__title {
+  font-weight: 700;
+  @include font(16px, 21px);
+  margin: 0;
+  margin-bottom: 2px;
+
+  @media (min-width: $tablet-width) {
+    @include font(20px, 27px);
+  }
+}
+
+.card__address {
+  @include font(12px, 16px);
+  margin: 0;
+  margin-bottom: 15px;
+
+  @media (min-width: $tablet-width) {
+    @include font(16px, 22px);
+  }
+}
+
+.card__text {
+  @include font(12px, 16px);
+  margin: 0;
+  margin-bottom: 7px;
+
+  @media (min-width: $tablet-width) {
+    @include font(16px, 22px);
+  }
+}
+
+.card__price {
+  font-weight: 700;
+  padding-left: 6px;
+}
+
+.card__description {
+  @include font(12px, 16px);
+  margin: 0;
+
+  @media (min-width: $tablet-width) {
+    @include font(14px, 19px);
+  }
+}
