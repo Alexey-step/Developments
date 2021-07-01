@@ -1,28 +1,21 @@
-# **Notebook App (React, TypeScript)**
+# **Developments App (React, TypeScript)**
 
-🔎 [Watch project live](https://mynotebook-app.herokuapp.com/)
+🔎 [Watch project live](https://development-app.netlify.app/)
 
-The project is a simple SPA, like notebook, where you can register, and then add contacts in your notebook, add this contacts to favorite, edit, delete them.Also you can search by contacts. And I made many improvements to the app, such as:
+The project is a simple SPA, like real estate agency, where you can look at latest developments, and filtered them. And I made some improvements to the app, such as:
 
 - responsive design,
-- Sort contacts by all or favorites,
-- pagination,
-- search,
-- registration,
-- authorization,
+- filter cards,
 - spinner,
-- tests
 
 🛠 Technologies used:
 
 - HTML/SCSS
 - JavaScript (ES6)
 - Webpack
-- Jest
 - TypeScript
 - React
 - Redux
-- Cookie
 
 ### **Install**
 
@@ -38,12 +31,6 @@ npm i
 
 ```
 npm run start
-```
-
-##### **Run tests**
-
-```
-npm test
 ```
 
 ---
